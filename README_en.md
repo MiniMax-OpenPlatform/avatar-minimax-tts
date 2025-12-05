@@ -1,66 +1,150 @@
 
-[![License](https://img.shields.io/badge/License-View%20License-blue.svg)](https://github.com/GuijiAI/HeyGem.ai/blob/main/LICENSE)
-![Python](https://img.shields.io/badge/Python-3.8-blue.svg)
-![Linux](https://img.shields.io/badge/OS-Linux-brightgreen.svg)
+# Avatar MiniMax TTS
 
-**[中文](./readme.md)** | **[English](#english-version)**
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://github.com/backearth1/heygem-h200)
+![Python](https://img.shields.io/badge/Python-3.8-blue.svg)
+![GPU](https://img.shields.io/badge/GPU-H200%20Supported-brightgreen.svg)
+
+**[中文](./README.md)** | **[English](#english-version)**
 
 ---
 
 <a name="english-version"></a>
 
-# HeyGem-Linux-Python-Hack
+## Project Overview
 
-## Introduction
+A digital human project driven by MiniMax high-fidelity TTS, supporting head motion control and complete Docker containerization. This project uses MiniMax M2's vibe coding and is optimized based on the Heygem project.
 
-[HeyGem-Linux-Python-Hack] is a Python-based digital human project extracted from HeyGem.ai. It is designed to run directly on Linux systems, eliminating the need for Docker and Windows. Our goal is to provide a easier-to-deploy, and user-friendly digital human solution.
+<img width="917" height="849" alt="image" src="https://github.com/user-attachments/assets/abb99e90-4f50-4c55-be41-f94feac0288d" />
 
-**Feel free to Star us if you find this project useful!**  
-**Please submit an Issue if you run into any problems!**
+## 🚀 Key Features
 
-## Key Features
+### 🎭 Motion Control System
+- **Intelligent Motion Recognition**: Automatically generate head movements based on audio features and semantic content
+- **Multiple Motion Modes**: Nodding, head shaking, thinking tilt and other head movements
+- **Motion Intensity Control**: Adjustable motion amplitude from 0.1-2.0x
+- **Real-time Motion Analysis**: Detailed motion parameters and execution reports
 
-* No Docker Required: Runs directly on Linux systems, simplifying the deployment process.
-* No Windows Required: Fully developed and tested on Linux.
-* Python Powered: Developed using the Python language, making it easy to understand and extend.
-* Developer-Friendly: Easy to use, and easy to extend.
+### Upcoming Extensions
+- Hand motion control
+- Facial emotion-driven expressions
+- LLM-based automatic tagging driven by text and sound
 
-## Getting Started
+## 📋 Requirements
 
-### Installation
+- **Operating System**: Linux (Ubuntu 18.04+)
+- **GPU**: Currently optimized for H200, recommend adapting drivers based on your hardware
+- **Software**: Docker 20.10+, NVIDIA Docker Runtime
+- **Memory**: Recommended 16GB+ RAM, 8GB+ GPU memory
 
-Please ensure that **Python 3.8** is installed on your Linux system. Then, you can install the project dependencies using pip:
+## 🛠️ Quick Start
 
+### 1. Clone Repository
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/backearth1/heygem-h200.git
+cd heygem-h200
 ```
 
-### Usage
-Clone this repository to your local machine:
+### 2. Download Model Files
 ```bash
-git clone https://github.com/Holasyb918/HeyGem-Linux-Python-Hack
-cd HeyGem-Linux-Python-Hack
 bash download.sh
 ```
-#### Getting Started
-* Audio and video examples that can be used for the demo are already provided in the repo, and the code can be run directly.
-#### Command:
+
+### 3. Build Docker Image
 ```bash
-python run.py
-```
-* If you want to use your own data, you can pass parameters externally. **Please note that the path is a local file and only supports relative paths.**
-#### command:  
-```bash
-python run.py --audio_path example/audio.wav --video_path example/video.mp4
-```  
-#### gradio:  
-```bash
-python app.py
-# Please wait until processor init done.
+# Basic version
+bash run_docker.sh
+
+# H200 optimized version
+docker build -f Dockerfile.h200 -t heygem-h200:latest .
 ```
 
-## Contributing  
-Contributions are welcome! 
+### 4. Start Services
 
-## License
-This project is licensed under the HeyGem.ai License.
+#### Basic Service
+```bash
+bash start_h200_daemon.sh
+```
+
+#### Motion Enhanced Version
+```bash
+bash start_motion_enhanced.sh
+```
+
+#### Emotion-Driven Version
+```bash
+bash start_emotion_system.sh
+```
+
+## 🌟 Service Access
+
+After startup, access via:
+
+-  http://localhost:7860
+
+## 📚 Usage Guide
+
+### Basic Usage
+1. Access the Web interface
+2. Upload audio file (.wav/.mp3)
+3. Upload video file (.mp4/.avi)
+4. Click "Generate" button
+5. Wait for processing completion and download results
+
+### Motion Control Usage
+1. Expand "🎭 Motion Control Options"
+2. Select motion type (nod/shake/think/emphasize)
+3. Adjust motion intensity (0.1-2.0)
+4. Submit generation task
+5. View "📊 Motion Analysis Report"
+
+## 🔧 Management Commands
+
+### Service Management
+```bash
+# Check service status
+sudo docker ps | grep heygem
+
+# View logs
+sudo docker exec heygem-service tail -f /workspace/app.log
+
+# Stop service
+bash stop_h200_service.sh
+
+# Restart service
+bash start_h200_daemon.sh
+```
+
+### System Maintenance
+```bash
+# Check GPU status
+nvidia-smi
+
+# Check PyTorch compatibility
+bash fix_pytorch_and_test.sh
+
+# Test service
+bash test_h200_service.sh
+```
+
+## 📖 Documentation
+
+For more detailed information, refer to:
+- [Project Documentation](CLAUDE.md) - Complete technical documentation and configuration guide
+- [Service Management](SERVICE_MANAGEMENT.md) - Service management and troubleshooting guide
+
+## 🤝 Contributing
+
+Issues and Pull Requests are welcome!
+
+## 📄 License
+
+This project is based on the original HeyGem.ai license.
+
+## ⭐ Star History
+
+If this project helps you, please give us a Star!
+
+---
+
+**🤖 Powered by MiniMax M2** - High-fidelity TTS-driven digital human
