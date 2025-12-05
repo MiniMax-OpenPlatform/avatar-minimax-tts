@@ -1,4 +1,4 @@
-# HeyGem H200 Digital Human - Docker Edition
+# Avatar MiniMax TTS
 
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://github.com/backearth1/heygem-h200)
 ![Python](https://img.shields.io/badge/Python-3.8-blue.svg)
@@ -6,7 +6,10 @@
 
 ## 项目简介
 
-HeyGem H200 Digital Human 是一个Docker化的数字人视频生成系统，专门为NVIDIA H200 GPU优化。支持先进的动作控制和情感驱动功能，提供完整的Docker容器化解决方案。
+基于MiniMax高拟人tts驱动的数字人项目，支持头部动作控制，已经适配H200,提供完整的Docker容器化，本项目采用MiniMax M2的vibe coding，在Heygem项目基础上优化而来。
+
+<img width="917" height="849" alt="image" src="https://github.com/user-attachments/assets/abb99e90-4f50-4c55-be41-f94feac0288d" />
+
 
 ## 🚀 主要特性
 
@@ -16,10 +19,10 @@ HeyGem H200 Digital Human 是一个Docker化的数字人视频生成系统，专
 - **动作强度控制**: 0.1-2.0倍可调节动作幅度
 - **实时动作分析**: 详细的动作参数和执行报告
 
-### 😊 情感驱动功能
-- **多视频情感系统**: 根据音频情感自动选择不同情感视频
-- **单视频情感控制**: 基于3DMM参数的实时情感表达调节
-- **情感识别**: 自动检测音频中的喜怒哀乐等情感状态
+### 后续待扩展功能
+- 手部动作驱动
+- 面部表情驱动
+- 基于文本和声音的LLM自动驱动标签
 
 ### 🎛️ 高级配置
 - **视频质量控制**: CRF值、编码预设、音频比特率可调
