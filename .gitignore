@@ -1,0 +1,105 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Compiled extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Large model files - download separately
+*.pth
+*.onnx
+*.pkl
+*.h5
+*.hdf5
+*.pb
+*.model
+*.bin
+
+# Large archives
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Generated media files and results
+result/
+output/
+temp/
+tmp/
+
+# Log files
+*.log
+log/
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Backup files
+*.bak
+*.backup
+
+# Large example media (keep structure, exclude large files)
+example/*.mp4
+example/*.avi
+example/*.mov
+!example/audio.wav
+
+# Pretrained models (download via download.sh)
+pretrain_models/
+checkpoints/*/
+xseg/
+y_utils/liblcr.so
+
+# Build artifacts
+wenet/examples/aishell/aidata/exp/

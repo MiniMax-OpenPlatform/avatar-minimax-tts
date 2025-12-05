@@ -1,0 +1,49 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+.pytest_cache
+
+# 环境
+.env
+.venv
+venv/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# 结果文件
+result/
+log/
+*.mp4
+*.avi
+
+# 不需要复制到镜像的大文件（这些会通过volume挂载）
+pretrain_models/
+face_detect_utils/resources/*.onnx
+face_attr_detect/*.onnx
+landmark2face_wy/checkpoints/anylang/*.pth
+xseg/*.onnx
+wenet/examples/aishell/aidata/exp/conformer/*.pt
+
+# Docker
+Dockerfile
+.dockerignore
+
+# 其他
+*.md
+1.jpeg
