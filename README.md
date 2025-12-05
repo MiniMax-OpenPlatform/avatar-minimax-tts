@@ -6,7 +6,7 @@
 
 ## 项目简介
 
-基于MiniMax高拟人tts驱动的数字人项目，支持头部动作控制，已经适配H200,提供完整的Docker容器化，本项目采用MiniMax M2的vibe coding，在Heygem项目基础上优化而来。
+基于MiniMax高拟人tts驱动的数字人项目，支持头部动作控制，提供完整的Docker容器化，本项目采用MiniMax M2的vibe coding，在Heygem项目基础上优化而来。
 
 <img width="917" height="849" alt="image" src="https://github.com/user-attachments/assets/abb99e90-4f50-4c55-be41-f94feac0288d" />
 
@@ -21,23 +21,14 @@
 
 ### 后续待扩展功能
 - 手部动作驱动
-- 面部表情驱动
+- 面部情感驱动
 - 基于文本和声音的LLM自动驱动标签
 
-### 🎛️ 高级配置
-- **视频质量控制**: CRF值、编码预设、音频比特率可调
-- **循环播放策略**: 智能视频帧循环和过渡平滑处理
-- **H200 GPU优化**: 专门针对H200架构的PyTorch 2.0优化
-
-### 🐳 Docker化部署
-- **一键部署**: 完整的Docker容器化方案
-- **GPU加速**: 原生支持NVIDIA GPU和CUDA
-- **持久化服务**: 守护进程模式，稳定长期运行
 
 ## 📋 环境要求
 
 - **操作系统**: Linux (Ubuntu 18.04+)
-- **GPU**: NVIDIA H200 或其他支持CUDA的GPU
+- **GPU**:  目前仅适配H200,建议自己根据硬件修改对应驱动
 - **软件**: Docker 20.10+, NVIDIA Docker Runtime
 - **内存**: 建议16GB+ RAM, 8GB+ GPU内存
 
@@ -82,13 +73,10 @@ bash start_emotion_system.sh
 
 ## 🌟 服务访问
 
-启动后可通过以下地址访问不同版本：
+启动后可通过以下地址访问：
 
-- **基础版本**: http://localhost:7860
-- **可调质量版**: http://localhost:7861
-- **多视频情感版**: http://localhost:7862
-- **单视频情感版**: http://localhost:7863
-- **动作增强版**: http://localhost:7864
+-  http://localhost:7860
+
 
 ## 📚 使用指南
 
@@ -106,11 +94,6 @@ bash start_emotion_system.sh
 4. 提交生成任务
 5. 查看"📊 动作分析报告"
 
-### 情感驱动使用
-1. 准备多个不同情感的视频文件
-2. 系统自动分析音频情感
-3. 根据检测结果选择合适视频
-4. 生成情感一致的数字人视频
 
 ## 🔧 管理命令
 
@@ -161,4 +144,4 @@ bash test_h200_service.sh
 
 ---
 
-**🤖 Powered by Claude Code** - 为H200 GPU优化的智能数字人系统
+**🤖 Powered by MiniMax M2** - 高拟真tts驱动的数字人
